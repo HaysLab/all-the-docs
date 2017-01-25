@@ -21,5 +21,8 @@ Docker is HIGHLY RECOMMENDED!
 - Python 2.7
 - Python 3.5
 - CUDA 8.0
-- Docker
-- Tensorflow
+- cuDNN 5.1
+- Docker 1.13.0
+- Caffe
+- Torch
+- Tensorflow 0.12.1
