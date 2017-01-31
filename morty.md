@@ -6,11 +6,29 @@ Below you will find all the documentation regarding the server named `Morty` use
 
 ## Table of Contents
 - [Getting Access](#getting-access)
+- [Remote Login](#remote-login)
+- [Configuration](#configuration)
 - [Available Software](#available-software)
 
 ## Getting Access
 
 In order to get access to Morty and use its Rick-powered capabilities, please contact [Dr. James Hays](http://www.cc.gatech.edu/~hays/) for permission. He will also be able to direct you to the sysadmin for Morty who can get you setup.
+
+## Remote Login
+
+To log in to Morty remotely, you can `ssh` in using the DNS: `morty.cc.gt.atl.ga.us`
+
+Be sure to prepend your username to the DNS, e.g. `hayslab@morty.cc.gt.atl.ga.us` 
+
+## Configuration
+
+Morty has the following configuration:
+
+- Processor:
+- RAM:
+- GPUs in SLI:
+  1. Nvidia Titan XP
+  2. Nvidia Titan X
 
 ## Available Software
 
