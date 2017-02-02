@@ -24,8 +24,12 @@ Be sure to prepend your username to the DNS, e.g. `hayslab@morty.cc.gt.atl.ga.us
 
 Morty has the following configuration:
 
-- Processor:
-- RAM:
+- CPU: i7-6900K
+- Motherboard: ASUS X99-A II (4 PCI express slots)
+- Memory: 64GB
+- SSD: 480GB
+- Hard Drive: 3TB
+- Power supply: 850W
 - GPUs in SLI:
   1. Nvidia Titan XP
   2. Nvidia Titan X
