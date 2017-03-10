@@ -19,7 +19,7 @@ Follow all the instructions given [here](http://caffe.berkeleyvision.org/install
 
 ### HDF5
 
-If you're using HDF5 layers, you need to perform some operations to allow Caffe to find the required header files and shared libraries:
+If you're using HDF5 layers, you need to perform some operations to allow Caffe to find the required header files and shared libraries, else you'll get a `hdf5.h file not found` error.
 
 - Modify `INCLUDE_DIRS` in `Makefile.config`
 
@@ -30,6 +30,6 @@ If you're using HDF5 layers, you need to perform some operations to allow Caffe 
 
 
         cd /usr/lib/x86_64-linux-gnu
-        sudo ln -s libhdf5_serial.so.8.0.2 libhdf5.so
-        sudo ln -s libhdf5_serial_hl.so.8.0.2 libhdf5_hl.so
+        sudo ln -s libhdf5_serial.so libhdf5.so
+        sudo ln -s libhdf5_serial_hl.so libhdf5_hl.so
 
