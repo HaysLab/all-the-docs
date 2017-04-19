@@ -54,6 +54,8 @@ caffe_modules = caffe.modules
 
 5. Use the below script to get only the weight layers in the caffe model and load them accordingly into the state dictionary:
 
+**NOTE** This has not been thoroughly tested. It may fail for your use case.
+
 ```python
 weight_layers = [m for m in caffe_modules if 'weight' in dir(m)]
 
