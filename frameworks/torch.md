@@ -22,6 +22,12 @@ model = loadcaffe.load('net.prototxt', 'weights.caffemodel')
 torch.save("caffe_model.t7", model)
 ```
 
+If you have trouble converting the models due to a lack of support, you should try changing the backend. For example, `SpatialConvolution` with `groups` is supported in the `cudnn` backend and you can specify it as such:
+
+```lua
+model = loadcaffe.load('net.prototxt', 'weights.caffemodel', 'cudnn')
+```
+
 
 ## PyTorch
 
