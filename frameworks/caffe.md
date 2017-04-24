@@ -5,6 +5,8 @@
 
 Follow all the instructions given [here](http://caffe.berkeleyvision.org/install_apt.html).
 
+There are very specific installation steps you need to perform for Ubuntu 15.10 and 16.04 and that can be found on the [Caffe wiki](https://github.com/BVLC/caffe/wiki/Ubuntu-16.04-or-15.10-Installation-Guide).
+
 ### Installing with Anaconda
 
 - Install Anaconda Python
