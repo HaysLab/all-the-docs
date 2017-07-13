@@ -2,7 +2,7 @@
 
 Below you will find all the documentation regarding the server named `Morty` used by HaysLab.
 
-<a href="https://en.wikipedia.org/wiki/Rick_and_Morty" target="_blank"><img src="./images/Morty.png" width="100px" height="100px" /></a>
+<a href="https://en.wikipedia.org/wiki/Rick_and_Morty" target="_blank"><img src="https://github.com/HaysLab/all-the-docs/blob/master/images/Morty.png" width="100px" height="100px" /></a>
 
 ## Table of Contents
 - [Getting Access](#getting-access)
