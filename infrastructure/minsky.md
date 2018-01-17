@@ -35,6 +35,18 @@ In order to access the GPU, you need to use [nvidia-docker](https://github.com/N
 
 > Docker already has plenty of base images with all the needed libraries and tools setup for your work. Please be sure to checkout Dockerhub for options.
 
+#### Docker Shared Volumes
+You can share a directory on your host with the docker container so that your process inside the container can write files to the host, to be used later (weight files for example). This shared directory is called a Volume in Docker parlance. 
+
+Docker containers normally launch as root, thus any files written to the volume will be owned by root on the host and not you, making deleting or modifying them next to impossible. The way to ensure files written to volumes are owned by you is pass in the `--user=$USER` flag for the `nvidia-docker run` command. For example, the way to run a container called `sample-container` would be:
+
+```shell
+nvidia-docker run -it --user=$USER -v $(pwd):/home/src sample-container
+```
+
+When you exit the container, all the files written to the volume will be owned by `$USER` which is you.
+
+
 ### Python Alternative
 
 If you are primarily using Python, you can setup a `virtualenv` and install all your dependencies and libraries to that in order to run your code. You do not need `sudo` access in order to set up a virtual environment for Python.
