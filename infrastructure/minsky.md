@@ -7,7 +7,7 @@ There are 8 servers which can be accessed by the URLs `minsky[0-7].cc.gatech.edu
 For example, to access Minsky 7, you can run something like below:
 
 ```shell
-ssh varunagrawal@minsky7.cc.gatech.edu
+ssh vagrawal38@minsky7.cc.gatech.edu
 ```
 
 >If you are part of a class that has access to Minsky, you should be able to log in directly. If you are a working on an independent research project with a professor, you will need to request Minsky access.
