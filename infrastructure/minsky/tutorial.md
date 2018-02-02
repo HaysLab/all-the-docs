@@ -110,6 +110,8 @@ If you aren't, you should use Docker Volumes in order to share disk space betwee
 nvidia-docker run -it --user=$USER -v $(pwd):/home/src project
 ```
 
+The `-it` flags tells docker to open up an interactive terminal prompt for you. The `-v` flag specifies a Docker Volume so that your project directory is loaded onto the container, and the `--user` flag ensures any files created within the container and saved to a Volume is owned by you.
+
 A new terminal prompt should appear before you. You can now run your code like normal as if you had your own desktop.
 
 You can quit the container by typing `exit` or hitting `Ctrl+d`. Once your code has finished running and you're done with the container, be sure to clean it up with
