@@ -103,11 +103,11 @@ At this point, if you run `docker images`, you should see your docker image in t
 
 Now that we have built the container image, we can run the container very easily.
 
-If you aren't, you should use Docker Volumes in order to share disk space between the server and your container. This way, any data you save to your container (such as models or results) will be synced to the server and you won't lose them accidentally. Note that you need to pass the `--user` flag to your container so that the saved data are owned by you and not by root.
+If you aren't, you should use Docker Volumes in order to share disk space between the server and your container. This way, any data you save to your container (such as models or results) will be synced to the server and you won't lose them accidentally. Note that you need to pass the `--user` flag to your container so that the saved data are owned by you and not by root. Passing in your UID also makes container monitoring easier.
 
 ```shell
 # Run the container with a shared volume
-nvidia-docker run -it --user=$USER -v $(pwd):/home/src project
+nvidia-docker run -it --user=$(id -u) -v $(pwd):/home/src project
 ```
 
 The `-it` flags tells docker to open up an interactive terminal prompt for you. The `-v` flag specifies a Docker Volume so that your project directory is loaded onto the container, and the `--user` flag ensures any files created within the container and saved to a Volume is owned by you.

@@ -35,16 +35,26 @@ In order to access the GPU, you need to use [nvidia-docker](https://github.com/N
 
 > Docker already has plenty of base images with all the needed libraries and tools setup for your work. Please be sure to checkout Dockerhub for options.
 
+#### Docker User
+
+It is recommended that you start your container with your UID. This can be done by passing in the `-u` or `--user` flag to the `nvidia-docker run` command
+
+```shell
+nvidia-docker run -it -u $(id -u) sample-container
+```
+
+This ensures that you have access to all the files in shared volumes as well as making monitoring of containers and the processes inside them much easier and legible.
+
 #### Docker Shared Volumes
 You can share a directory on your host with the docker container so that your process inside the container can write files to the host, to be used later (weight files for example). This shared directory is called a Volume in Docker parlance. 
 
-Docker containers normally launch as root, thus any files written to the volume will be owned by root on the host and not you, making deleting or modifying them next to impossible. The way to ensure files written to volumes are owned by you is pass in the `--user=$USER` flag for the `nvidia-docker run` command. For example, the way to run a container called `sample-container` would be:
+Docker containers normally launch as root, thus any files written to the volume will be owned by root on the host and not you, making deleting or modifying them next to impossible. The way to ensure files written to volumes are owned by you is pass in the `--user` or `-u` flag for the `nvidia-docker run` command as described above. For example, the way to run a container called `sample-container` would be:
 
 ```shell
-nvidia-docker run -it --user=$USER -v $(pwd):/home/src sample-container
+nvidia-docker run -it --user=$(id -u) -v $(pwd):/home/src sample-container
 ```
 
-When you exit the container, all the files written to the volume will be owned by `$USER` which is you.
+When you exit the container, all the files written to the volume will be owned by `$(id -u)` which is you.
 
 
 ### Python Alternative
