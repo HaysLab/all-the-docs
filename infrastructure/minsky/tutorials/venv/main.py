@@ -3,7 +3,7 @@ from torch import nn, optim
 from torch.autograd import Variable
 import torchvision
 from torchvision import transforms
-from torchvision.models import alexnet
+from torchvision.models import resnet18
 from tqdm import tqdm
 
 
@@ -14,7 +14,7 @@ def get_dataset():
     train_transforms = transforms.Compose([
         transforms.RandomCrop(32, padding=4),  # CIFAR images are 32x32
         transforms.RandomHorizontalFlip(),
-        transforms.Resize(224),  # since we are using AlexNet
+        transforms.Resize(224),
         transforms.ToTensor(),
         transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)),
     ])
@@ -36,7 +36,7 @@ def get_dataset():
 
 def get_model():
     print("Building model")
-    model = alexnet(pretrained=True)
+    model = resnet18(pretrained=True)
     if use_cuda:
         model.cuda()
 

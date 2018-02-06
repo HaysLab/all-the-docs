@@ -70,7 +70,9 @@ Let us run our program and see what we get:
 python main.py
 ```
 
-The result should be the test loss and the accuracy of the model on the CIFAR-10 test set.
+This will begin training a ResNet18 model on the CIFAR-10 dataset and will spit out the training loss at the end of every epoch.
+
+Finally, the result should be the test loss and the accuracy of the model on the CIFAR-10 test set.
 
 
 ## Conclusion
